@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rithika Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Main Navigation -->
-  <nav>
-    <ul>
+  <nav class="nav-container">
+    <h1>Welcome to My Portfolio</h1>
+    <ul class="nav-container">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -19,43 +21,112 @@
 
   <!-- Page Sections -->
   <section id="about">
-    <h1>Welcome to My Portfolio</h1>
+
     <h1>About Me</h1>
-    <p>I am a pre-final year B.Tech student in Computer Science and Business Systems at Sri Sai Ram Engineering College, passionate about technology and innovation. As a Python enthusiast with a strong foundation in programming, I am actively expanding my expertise in machine learning and full-stack web development. I have a deep curiosity and a relentless quest to learn new things, coupled with the ability to adapt to different situations. A smart worker by nature, I aspire to excel in the IT field, leveraging my skills in Python programming and my growing knowledge of web development to create impactful solutions. Driven by my passion and curiosity, I am always eager to explore and embrace new challenges.</p>
-    <img class="profile" src="C:\Users\Admin\Documents\portfolio\images\cropped_image.png" alt="Profile">
+    <div class="about-container">
+      <p>I am a pre-final year B.Tech student in Computer Science and Business Systems at Sri Sai Ram Engineering College, passionate about technology and innovation. As a Python enthusiast with a strong foundation in programming, I am actively expanding my expertise in machine learning and full-stack web development. I have a deep curiosity and a relentless quest to learn new things, coupled with the ability to adapt to different situations. A smart worker by nature, I aspire to excel in the IT field, leveraging my skills in Python programming and my growing knowledge of web development to create impactful solutions. Driven by my passion and curiosity, I am always eager to explore and embrace new challenges.</p>
+      <img class="profile" src="images\cropped_image.png" alt="Profile">
+    </div>
+
   </section>
+
   <section id="skills">
-    <h1>Skills</h1>
-    <h3>Frontend</h3>
+    <h1 class="heading">Skills</h1>
+    <h3 class="heading">Frontend</h3>
     <div class="skills-container" id="Frontend">
     <!-- Example for Python -->
     <div class="skill">
-      <img class="logos" src="C:\Users\Admin\Documents\portfolio\images\html.svg" alt="HTML Logo" />
+      <img class="logos" src="images\html.svg" alt="HTML Logo" />
       <p>Html</p>
     </div>
 
-    <!-- Example for Java -->
     <div class="skill">
-      <img class="logos" src="C:\Users\Admin\Documents\portfolio\images\css.svg" alt="CSS Logo" />
+      <img class="logos" src="images\css.svg" alt="CSS Logo" />
       <p>CSS</p>
     </div>
 
-    <!-- Example for SQL -->
     <div class="skill">
-      <img class="logos" src="C:\Users\Admin\Documents\portfolio\images\JS.svg" alt="JS Logo" />
+      <img class="logos" src="images\JS.svg" alt="JS Logo" />
       <p>JS</p>
     </div>
-    <h3>Backend</h3>
-    <h3>Frameworks</h3>
-    <h3>Software and Tools</h3>
+
+    <div class="skill">
+      <img class="logos" src="images\bootstrao.jpg" alt="Bootstrap Logo" />
+      <p>Bootstrap</p>
+    </div>
+
+    <div class="skill">
+      <img class="logos" src="images\react.svg" alt="React Logo" />
+      <p>React</p>
+    </div>
+  </div>
+    <h3 class="heading">Backend</h3>
+    <div class="skills-container" id="Backend">
+    <!-- Example for Python -->
+    <div class="skill">
+      <img class="logos" src="images\Python.svg" alt="Python Logo" />
+      <p>Python</p>
+    </div>
+
+    <div class="skill">
+      <img class="logos" src="images\mysql.svg" alt="SQL Logo" />
+      <p>SQL</p>
+    </div>
+    <div class="skill">
+      <img class="logos" src="images\flask.svg" alt="Flask Logo" />
+      <p>Flask</p>
+    </div>
+  </div>
+
+  <h3 class="heading">Programming Languages</h3>
+  <div class="skills-container" id="Languages">
+  <div class="skill">
+    <img class="logos" src="images\CPlusPlus.svg" alt="C++ Logo" />
+    <p>C++</p>
+  </div>
+
+  <div class="skill">
+    <img class="logos" src="images\Java.svg" alt="Java Logo" />
+    <p>Java</p>
+  </div>
+</div>
+
+    <h3 class="heading" >Software and Tools</h3>
+    <div class="skills-container" id="Tools">
+    <div class="skill">
+      <img class="logos" src="images\git.svg" alt="git Logo" />
+      <p>git</p>
+    </div>
+
+    <div class="skill">
+      <img class="logos" src="images\powerbi.png" alt="Bi Logo" />
+      <p>powerbi</p>
+    </div>
+    <div class="skill">
+      <img class="logos" src="images\figma.png" alt="figma Logo" />
+      <p>Figma</p>
+    </div>
+    </div>
   </section>
+
   <section id="projects">
     <h1>My Projects</h1>
 
 
   </section>
+
   <section id="contact">
     <h1>Contact Me</h1>
+    <nav class="nav-container">
+      <ul class="nav-container">
+        <li><a href="https://www.instagram.com/rrithika_201?igsh=MTZzZ2w2NGsxemhuOA==" target="_blank">Instagram</a></li>
+        <li><a href="https://github.com/Rithi-04" target="_blank">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/rithika-roopakumaran-235956212?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">Linkedin</a></li>
+        <li><a href="mailto:roopakumaranrithika@gmail.com">Gmail</a></li>
+      </ul>
+    </nav>
   </section>
+
 </body>
+
 </html>

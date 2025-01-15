@@ -1,6 +1,22 @@
+body{
+  font-family: 'Poppins', sans-serif;
+}
+.skills-container, .about-container, .nav-container{
+  display: flex;
+  gap: 20px;
+}
+.skills-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading{
+  justify-content:  center;
+  text-align: center;
+}
 .logos{
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
 }
 .profile{
   width: 150px;
