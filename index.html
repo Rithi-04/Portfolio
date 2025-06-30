@@ -175,22 +175,25 @@
         <div id="formMessage" class="form-message" style="display: none;"></div>
       </div>
       
-      <div class="contact-info-section">
-        <h3 class="form-heading">Get in touch</h3>
-        <p class="contact-description">Feel free to reach out to me for any inquiries, collaborations, or just to say hello! I'm always excited to connect with fellow developers and tech enthusiasts.</p>
-        
-        <div class="contact-details">
-          <div class="contact-item">
-            <strong>Email:</strong> roopakumaranrithika@gmail.com
-          </div>
-          <div class="contact-item">
-            <strong>Location:</strong> Chennai, India
-          </div>
-          <div class="contact-item">
-            <strong>Response Time:</strong> Within 24 hours
+              <div class="contact-info-section">
+          <h3 class="form-heading">Get in touch</h3>
+          <p class="contact-description">Feel free to reach out to me for any inquiries, collaborations, or just to say hello! The contact form will open your email client with all the details pre-filled for easy sending.</p>
+          
+          <div class="contact-details">
+            <div class="contact-item">
+              <strong>Email:</strong> roopakumaranrithika@gmail.com
+            </div>
+            <div class="contact-item">
+              <strong>Location:</strong> Chennai, India
+            </div>
+            <div class="contact-item">
+              <strong>Response Time:</strong> Within 24 hours
+            </div>
+            <div class="contact-item">
+              <strong>How it works:</strong> Fill the form → Click send → Your email client opens with message ready to send
+            </div>
           </div>
         </div>
-      </div>
     </div>
 
     <!-- Social Media Links -->
@@ -242,64 +245,34 @@
       btnLoading.style.display = 'inline';
       submitBtn.disabled = true;
       
-      // Create EmailJS service (fallback to mailto if EmailJS fails)
-      sendEmailWithEmailJS(formData)
-        .then(() => {
-          showMessage('Message sent successfully! I\'ll get back to you soon.', 'success');
-          document.getElementById('contactForm').reset();
-        })
-        .catch(() => {
-          // Fallback to mailto
-          sendEmailWithMailto(formData);
-        })
-        .finally(() => {
-          // Reset button state
-          btnText.style.display = 'inline';
-          btnLoading.style.display = 'none';
-          submitBtn.disabled = false;
-        });
+      // Send email using mailto
+      setTimeout(() => {
+        sendEmailWithMailto(formData);
+        
+        // Reset button state
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+        
+        // Reset form after successful submission
+        document.getElementById('contactForm').reset();
+      }, 500);
     });
     
-    function sendEmailWithEmailJS(formData) {
-      return new Promise((resolve, reject) => {
-        // Check if EmailJS is loaded
-        if (typeof emailjs === 'undefined') {
-          reject('EmailJS not loaded');
-          return;
-        }
-        
-        // EmailJS configuration
-        emailjs.send('service_portfolio', 'template_contact', {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'roopakumaranrithika@gmail.com'
-        })
-        .then(function(response) {
-          console.log('EmailJS Success:', response);
-          resolve(response);
-        }, function(error) {
-          console.log('EmailJS Error:', error);
-          reject(error);
-        });
-      });
-    }
-    
     function sendEmailWithMailto(formData) {
-      // Fallback to mailto
       const subject = encodeURIComponent(formData.subject);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
         `Email: ${formData.email}\n` +
         `Subject: ${formData.subject}\n\n` +
-        `Message:\n${formData.message}`
+        `Message:\n${formData.message}\n\n` +
+        `---\nSent from Portfolio Contact Form`
       );
       
       const mailtoLink = `mailto:roopakumaranrithika@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailtoLink;
+      window.open(mailtoLink, '_self');
       
-      showMessage('Opening your email client...', 'info');
+      showMessage('Opening your email client with the message...', 'success');
     }
     
     function showMessage(message, type) {
@@ -308,24 +281,11 @@
       formMessage.className = `form-message ${type}`;
       formMessage.style.display = 'block';
       
-      // Hide message after 5 seconds
+      // Hide message after 4 seconds
       setTimeout(() => {
         formMessage.style.display = 'none';
-      }, 5000);
+      }, 4000);
     }
-    
-    // Initialize EmailJS when the page loads
-    (function() {
-      // EmailJS public key - you'll need to replace this with your actual public key
-      const emailjsScript = document.createElement('script');
-      emailjsScript.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
-      emailjsScript.onload = function() {
-        // Initialize EmailJS with your public key
-        // emailjs.init('YOUR_PUBLIC_KEY'); // Uncomment and add your EmailJS public key
-        console.log('EmailJS loaded (but not initialized - add your public key)');
-      };
-      document.head.appendChild(emailjsScript);
-    })();
   </script>
 
 </body>
